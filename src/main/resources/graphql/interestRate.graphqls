@@ -1,0 +1,13 @@
+type InterestRateResponse {
+    id: ID,
+    productType: String,
+    productName: String,
+    rate: Float,
+    term: String,
+    minimumAmount: Float,
+    maximumAmount: Float,
+    description: String,
+    isActive: Boolean,
+    effectiveDate: String,
+    updatedAt: String
+}
