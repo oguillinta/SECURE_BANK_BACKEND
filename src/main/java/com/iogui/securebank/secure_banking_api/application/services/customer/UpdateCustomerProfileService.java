@@ -25,14 +25,11 @@ public class UpdateCustomerProfileService implements UpdateCustomerProfileUseCas
         logger.info("Updating profile for customer {} by {}",
                 request.customerId(), request.updatedBy());
 
-        // Get existing customer from database - this will throw exception if not found
         Customer existingCustomer = customerOutputPort.getCustomerById(request.customerId())
                 .orElseThrow(() -> new IllegalArgumentException("Customer not found"));
 
-        // Update the existing customer with new data
         updateCustomerFields(existingCustomer, request);
 
-        // Save the updated customer
         Customer updatedCustomer = customerOutputPort.updateCustomer(existingCustomer);
 
         logger.info("Profile updated successfully for customer {}", request.customerId());
@@ -51,7 +48,7 @@ public class UpdateCustomerProfileService implements UpdateCustomerProfileUseCas
     }
 
     private void updateCustomerFields(Customer customer, UpdateCustomerRequest request) {
-        // Update only the fields that are provided in the request (null-safe updates)
+
         if (request.firstName() != null && !request.firstName().trim().isEmpty()) {
             customer.setFirstName(request.firstName().trim());
         }
@@ -68,7 +65,6 @@ public class UpdateCustomerProfileService implements UpdateCustomerProfileUseCas
             customer.setCustomerType(request.customerType().trim());
         }
 
-        // Always update the timestamp
         customer.setUpdatedAt(Instant.now());
     }
 }

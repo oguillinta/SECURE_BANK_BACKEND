@@ -42,7 +42,6 @@ public class Account {
         this.updatedAt = updatedAt;
     }
 
-    // Private constructor - forces use of static factory methods
     private Account(String accountNumber, String customerId, String accountType) {
         this.accountNumber = accountNumber;
         this.customerId = customerId;
@@ -54,14 +53,6 @@ public class Account {
         this.updatedAt = Instant.now();
     }
 
-    // ============================================================================
-    // STATIC FACTORY METHODS
-    // ============================================================================
-
-    /**
-     * Creates a Savings Account (Cuenta de Ahorros)
-     * Most popular account type in Peru for personal banking
-     */
     public static Account createSavingsAccount(String customerId) {
         String accountNumber = generateAccountNumber();
         Account account = new Account(accountNumber, customerId, "SAVINGS_ACCOUNT");
@@ -69,10 +60,6 @@ public class Account {
         return account;
     }
 
-    /**
-     * Creates a Current Account (Cuenta Corriente)
-     * Used by businesses and individuals who need check-writing capabilities
-     */
     public static Account createCurrentAccount(String customerId) {
         String accountNumber = generateAccountNumber();
         Account account = new Account(accountNumber, customerId, "CURRENT_ACCOUNT");
@@ -80,10 +67,6 @@ public class Account {
         return account;
     }
 
-    /**
-     * Creates a Payroll Account (Cuenta Sueldo)
-     * Specifically for receiving salary payments - very common in Peru
-     */
     public static Account createPayrollAccount(String customerId) {
         String accountNumber = generateAccountNumber();
         Account account = new Account(accountNumber, customerId, "PAYROLL_ACCOUNT");
@@ -91,14 +74,9 @@ public class Account {
         return account;
     }
 
-    // Simple account number generator
     private static String generateAccountNumber() {
         return "ACC" + System.currentTimeMillis();
     }
-
-    // ============================================================================
-    // BUSINESS METHODS
-    // ============================================================================
 
     public boolean canTransact() {
         return "ACTIVE".equals(status);
@@ -124,8 +102,6 @@ public class Account {
     public boolean isFrozen() {
         return "FROZEN".equals(status);
     }
-
-    // SIMPLE FREEZE OPERATIONS
 
     public void freeze(String reason, String freezeType, String frozenBy, String referenceNumber) {
         if (isFrozen()) {

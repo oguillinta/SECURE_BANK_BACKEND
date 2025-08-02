@@ -68,7 +68,6 @@ public class CreateAccountService implements CreateAccountUseCase {
     }
 
     private String generateAccountNumber() {
-        // Simple account number generation - you might want to make this more sophisticated
         return "ACC" + System.currentTimeMillis() + UUID.randomUUID().toString().substring(0, 6).toUpperCase();
     }
 
