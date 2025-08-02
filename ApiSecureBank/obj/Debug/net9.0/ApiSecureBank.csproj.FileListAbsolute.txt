@@ -319,3 +319,9 @@ E:\NetCore\DiseñoSeguro\Proyecto\modelo\SECURE_BANK_BACKEND\ApiSecureBank\obj\D
 E:\NetCore\DiseñoSeguro\Proyecto\modelo\SECURE_BANK_BACKEND\ApiSecureBank\obj\Debug\net9.0\ApiSecur.9549C40F.Up2Date
 E:\NetCore\DiseñoSeguro\Proyecto\modelo\SECURE_BANK_BACKEND\ApiSecureBank\obj\Debug\net9.0\ApiSecureBank.genruntimeconfig.cache
 E:\NetCore\DiseñoSeguro\Proyecto\modelo\SECURE_BANK_BACKEND\ApiSecureBank\obj\Debug\net9.0\ref\ApiSecureBank.dll
+E:\NetCore\DiseñoSeguro\Proyecto\modelo\SECURE_BANK_BACKEND\ApiSecureBank\obj\Debug\net9.0\ApiSecureBank.MvcApplicationPartsAssemblyInfo.cs
+E:\NetCore\DiseñoSeguro\Proyecto\modelo\SECURE_BANK_BACKEND\ApiSecureBank\bin\Debug\net9.0\AutoMapper.dll
+E:\NetCore\DiseñoSeguro\Proyecto\modelo\SECURE_BANK_BACKEND\ApiSecureBank\bin\Debug\net9.0\Microsoft.OpenApi.dll
+E:\NetCore\DiseñoSeguro\Proyecto\modelo\SECURE_BANK_BACKEND\ApiSecureBank\bin\Debug\net9.0\Swashbuckle.AspNetCore.Swagger.dll
+E:\NetCore\DiseñoSeguro\Proyecto\modelo\SECURE_BANK_BACKEND\ApiSecureBank\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+E:\NetCore\DiseñoSeguro\Proyecto\modelo\SECURE_BANK_BACKEND\ApiSecureBank\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll
