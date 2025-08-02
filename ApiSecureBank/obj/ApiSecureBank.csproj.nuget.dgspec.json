@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\NetCore\\DiseñoSeguro\\Proyecto\\ApiSecureBank\\ApiSecureBank.csproj": {}
+    "E:\\NetCore\\DiseñoSeguro\\Proyecto\\modelo\\SECURE_BANK_BACKEND\\ApiSecureBank\\ApiSecureBank.csproj": {}
   },
   "projects": {
-    "E:\\NetCore\\DiseñoSeguro\\Proyecto\\ApiSecureBank\\ApiSecureBank.csproj": {
+    "E:\\NetCore\\DiseñoSeguro\\Proyecto\\modelo\\SECURE_BANK_BACKEND\\ApiSecureBank\\ApiSecureBank.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\NetCore\\DiseñoSeguro\\Proyecto\\ApiSecureBank\\ApiSecureBank.csproj",
+        "projectUniqueName": "E:\\NetCore\\DiseñoSeguro\\Proyecto\\modelo\\SECURE_BANK_BACKEND\\ApiSecureBank\\ApiSecureBank.csproj",
         "projectName": "ApiSecureBank",
-        "projectPath": "E:\\NetCore\\DiseñoSeguro\\Proyecto\\ApiSecureBank\\ApiSecureBank.csproj",
+        "projectPath": "E:\\NetCore\\DiseñoSeguro\\Proyecto\\modelo\\SECURE_BANK_BACKEND\\ApiSecureBank\\ApiSecureBank.csproj",
         "packagesPath": "C:\\Users\\David\\.nuget\\packages\\",
-        "outputPath": "E:\\NetCore\\DiseñoSeguro\\Proyecto\\ApiSecureBank\\obj\\",
+        "outputPath": "E:\\NetCore\\DiseñoSeguro\\Proyecto\\modelo\\SECURE_BANK_BACKEND\\ApiSecureBank\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

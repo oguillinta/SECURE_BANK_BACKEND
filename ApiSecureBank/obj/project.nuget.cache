@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "vN7SlRG1cuQ=",
+  "dgSpecHash": "6wrvRWUNKNA=",
   "success": true,
-  "projectFilePath": "E:\\NetCore\\DiseñoSeguro\\Proyecto\\ApiSecureBank\\ApiSecureBank.csproj",
+  "projectFilePath": "E:\\NetCore\\DiseñoSeguro\\Proyecto\\modelo\\SECURE_BANK_BACKEND\\ApiSecureBank\\ApiSecureBank.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\David\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\David\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

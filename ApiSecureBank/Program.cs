@@ -17,4 +17,9 @@ var app = builder.Build();
 
 app.MapGet("/", () => "Hello World!");
 
+// Middleware configuration START
+
+
+// Middleware configuration END
+
 app.Run();
