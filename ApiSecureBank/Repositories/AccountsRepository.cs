@@ -9,7 +9,7 @@ namespace ApiSecureBank.Repositories
     {
         public async Task<List<Account>> GetAll(int customerId)
         {
-            return await context.Accounts.OrderBy(g => g.CustomerId == customerId).ToListAsync();
+            return await context.Accounts.OrderBy(g => g.accountNumber).ToListAsync();
         }
 
         public async Task<int> Create(Account account)
@@ -26,8 +26,8 @@ namespace ApiSecureBank.Repositories
 
         public async Task<List<Account>> GetByName(string name)
         {
-            return await context.Accounts.Where(g => g.Name.Contains(name))
-                .OrderBy(g => g.Name)
+            return await context.Accounts.Where(g => g.accountNumber.Contains(name))
+                .OrderBy(g => g.accountNumber)
                 .ToListAsync();
         }
         // Example method to get all Customers

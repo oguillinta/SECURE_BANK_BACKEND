@@ -3,13 +3,19 @@
     public class Account
     {
         public int Id { get; set; }
-        public String Name { get; set; } = null!;
-        public double CurrentBalance { get; set; }
-        public double DailyLimit { get; set; }
-        public Boolean Active { get; set; }
-        public DateTime Opened { get; set; }
-        public DateTime LastUpdated { get; set; }
-        public int TypeAccountId { get; set; }
-        public int CustomerId { get; set; }
+        public String accountNumber { get; set; } = null!;
+        public String customerId { get; set; } = null!;
+        public String accountType { get; set; } = null!;
+        public double balance { get; set; }
+        public double dailyTransactionLimit { get; set; }
+        public Boolean status { get; set; }
+        public DateTime createdAt { get; set; }
+        public DateTime updatedAt { get; set; }
+        public String? freezeReason { get; set; }
+        public String? freezeType { get; set; }
+        public DateTime freezeDate { get; set; }
+        public String? frozenBy { get; set; }
+        public DateTime DATETIME2 { get; set; }
+        public String? freezeReferenceNumber { get; set; }
     }
 }
