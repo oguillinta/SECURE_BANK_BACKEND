@@ -70,6 +70,7 @@ if (builder.Environment.IsDevelopment())
 app.MapGet("/", () => "Hello World!");
 app.UseCors();
 app.MapGroup("/Accounts").MapAccounts();
+app.MapGroup("/Customers").MapCustomers();
 
 
 // Middleware configuration END

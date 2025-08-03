@@ -10,6 +10,8 @@ namespace ApiSecureBank.Utilities
         {
             CreateMap<Account, AccountDTO>();
             CreateMap<CreateAccountDTO, Account>();
+            CreateMap<Customer, CustomerDTO>();
+            CreateMap<CreateCustomerDTO, Customer>();
         }
     }
 }
