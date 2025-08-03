@@ -14,7 +14,7 @@ namespace ApiSecureBank.Endpoints
         {
             group.MapGet("/", GetAll)
                 .CacheOutput(c => c.Expire(TimeSpan.FromSeconds(60)).Tag("accounts-get"));
-            group.MapGet("/GetByName/{name}", GetByName)
+            group.MapGet("/GetByNumber/{number}", GetByNumber)
                 .CacheOutput(c => c.Expire(TimeSpan.FromSeconds(60)).Tag("accounts-get"));
             group.MapGet("/{id:int}", GetById);
             group.MapPost("/", Create);
@@ -25,7 +25,7 @@ namespace ApiSecureBank.Endpoints
 
 
         static async Task<Results<Ok<List<AccountDTO>>, NotFound>> GetAll(IAccountsRepository repository,
-            ICustomersRepository customersRepository, IMapper mapper,)
+            ICustomersRepository customersRepository, IMapper mapper)
         {
             //if (!await customersRepository.Exist(customerId))
             //{
@@ -51,9 +51,9 @@ namespace ApiSecureBank.Endpoints
             var accountDTO = mapper.Map<AccountDTO>(account);
             return TypedResults.Ok(accountDTO);
         }
-        static async Task<Ok<IEnumerable<AccountDTO>>> GetByName(string number, IAccountsRepository repository, IMapper mapper)
+        static async Task<Ok<IEnumerable<AccountDTO>>> GetByNumber(string number, IAccountsRepository repository, IMapper mapper)
         {
-            var accounts = await repository.GetByName(number);
+            var accounts = await repository.GetByNumber(number);
             var accountsDTO = mapper.Map<IEnumerable<AccountDTO>>(accounts);
             return TypedResults.Ok(accountsDTO);
         }

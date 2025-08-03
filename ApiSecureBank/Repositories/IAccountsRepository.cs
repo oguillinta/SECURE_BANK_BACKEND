@@ -9,7 +9,7 @@ namespace ApiSecureBank.Repositories
         Task<bool> Exist(int id);
         Task<List<Account>> GetAll(int customerId);
         Task<Account?> GetById(int id);
-        Task<List<Account>> GetByName(string name);
+        Task<List<Account>> GetByNumber(string name);
         Task Update(Account account);
     }
 }

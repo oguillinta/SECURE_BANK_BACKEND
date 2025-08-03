@@ -24,7 +24,7 @@ namespace ApiSecureBank.Repositories
             return await context.Accounts.AsNoTracking().FirstOrDefaultAsync(t => t.Id == id);
         }
 
-        public async Task<List<Account>> GetByName(string name)
+        public async Task<List<Account>> GetByNumber(string name)
         {
             return await context.Accounts.Where(g => g.accountNumber.Contains(name))
                 .OrderBy(g => g.accountNumber)

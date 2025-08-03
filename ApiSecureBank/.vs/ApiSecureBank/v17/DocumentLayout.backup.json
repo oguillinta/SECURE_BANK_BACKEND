@@ -7,6 +7,18 @@
       "RelativeMoniker": "D:0:0:{692CEA58-8CCC-4B84-8FB6-0C899765AD5A}|ApiSecureBank.csproj|solutionrelative:endpoints\\accountsendpoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{692CEA58-8CCC-4B84-8FB6-0C899765AD5A}|ApiSecureBank.csproj|e:\\netcore\\dise\u00F1oseguro\\proyecto\\modelo\\secure_bank_backend\\apisecurebank\\entities\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{692CEA58-8CCC-4B84-8FB6-0C899765AD5A}|ApiSecureBank.csproj|solutionrelative:entities\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{692CEA58-8CCC-4B84-8FB6-0C899765AD5A}|ApiSecureBank.csproj|e:\\netcore\\dise\u00F1oseguro\\proyecto\\modelo\\secure_bank_backend\\apisecurebank\\repositories\\iaccountsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{692CEA58-8CCC-4B84-8FB6-0C899765AD5A}|ApiSecureBank.csproj|solutionrelative:repositories\\iaccountsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{692CEA58-8CCC-4B84-8FB6-0C899765AD5A}|ApiSecureBank.csproj|e:\\netcore\\dise\u00F1oseguro\\proyecto\\modelo\\secure_bank_backend\\apisecurebank\\repositories\\accountsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{692CEA58-8CCC-4B84-8FB6-0C899765AD5A}|ApiSecureBank.csproj|solutionrelative:repositories\\accountsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{692CEA58-8CCC-4B84-8FB6-0C899765AD5A}|ApiSecureBank.csproj|e:\\netcore\\dise\u00F1oseguro\\proyecto\\modelo\\secure_bank_backend\\apisecurebank\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{692CEA58-8CCC-4B84-8FB6-0C899765AD5A}|ApiSecureBank.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
@@ -33,10 +45,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{692CEA58-8CCC-4B84-8FB6-0C899765AD5A}|ApiSecureBank.csproj|e:\\netcore\\dise\u00F1oseguro\\proyecto\\modelo\\secure_bank_backend\\apisecurebank\\dtos\\createaccountdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{692CEA58-8CCC-4B84-8FB6-0C899765AD5A}|ApiSecureBank.csproj|solutionrelative:dtos\\createaccountdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{692CEA58-8CCC-4B84-8FB6-0C899765AD5A}|ApiSecureBank.csproj|e:\\netcore\\dise\u00F1oseguro\\proyecto\\modelo\\secure_bank_backend\\apisecurebank\\entities\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{692CEA58-8CCC-4B84-8FB6-0C899765AD5A}|ApiSecureBank.csproj|solutionrelative:entities\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,11 +54,37 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
+              "Title": "IAccountsRepository.cs",
+              "DocumentMoniker": "E:\\NetCore\\Dise\u00F1oSeguro\\Proyecto\\modelo\\SECURE_BANK_BACKEND\\ApiSecureBank\\Repositories\\IAccountsRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\IAccountsRepository.cs",
+              "ToolTip": "E:\\NetCore\\Dise\u00F1oSeguro\\Proyecto\\modelo\\SECURE_BANK_BACKEND\\ApiSecureBank\\Repositories\\IAccountsRepository.cs",
+              "RelativeToolTip": "Repositories\\IAccountsRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-03T00:00:09.447Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AccountsRepository.cs",
+              "DocumentMoniker": "E:\\NetCore\\Dise\u00F1oSeguro\\Proyecto\\modelo\\SECURE_BANK_BACKEND\\ApiSecureBank\\Repositories\\AccountsRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\AccountsRepository.cs",
+              "ToolTip": "E:\\NetCore\\Dise\u00F1oSeguro\\Proyecto\\modelo\\SECURE_BANK_BACKEND\\ApiSecureBank\\Repositories\\AccountsRepository.cs",
+              "RelativeToolTip": "Repositories\\AccountsRepository.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwBoAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-03T00:00:03.146Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "launchSettings.json",
               "DocumentMoniker": "E:\\NetCore\\Dise\u00F1oSeguro\\Proyecto\\modelo\\SECURE_BANK_BACKEND\\ApiSecureBank\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "Properties\\launchSettings.json",
@@ -58,12 +92,11 @@
               "RelativeToolTip": "Properties\\launchSettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-08-02T23:44:07.002Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-02T23:44:07.002Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "appsettings.json",
               "DocumentMoniker": "E:\\NetCore\\Dise\u00F1oSeguro\\Proyecto\\modelo\\SECURE_BANK_BACKEND\\ApiSecureBank\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
@@ -71,12 +104,11 @@
               "RelativeToolTip": "appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-08-02T23:41:32.29Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-02T23:41:32.29Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "appsettings.Development.json",
               "DocumentMoniker": "E:\\NetCore\\Dise\u00F1oSeguro\\Proyecto\\modelo\\SECURE_BANK_BACKEND\\ApiSecureBank\\appsettings.Development.json",
               "RelativeDocumentMoniker": "appsettings.Development.json",
@@ -84,12 +116,11 @@
               "RelativeToolTip": "appsettings.Development.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-08-02T23:41:32.652Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-02T23:41:32.652Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
               "Title": "AutoMapperProfiles.cs",
               "DocumentMoniker": "E:\\NetCore\\Dise\u00F1oSeguro\\Proyecto\\modelo\\SECURE_BANK_BACKEND\\ApiSecureBank\\Utilities\\AutoMapperProfiles.cs",
               "RelativeDocumentMoniker": "Utilities\\AutoMapperProfiles.cs",
@@ -97,12 +128,11 @@
               "RelativeToolTip": "Utilities\\AutoMapperProfiles.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-02T23:26:12.338Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-02T23:26:12.338Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 10,
               "Title": "CreateAccountDTO.cs",
               "DocumentMoniker": "E:\\NetCore\\Dise\u00F1oSeguro\\Proyecto\\modelo\\SECURE_BANK_BACKEND\\ApiSecureBank\\DTOs\\CreateAccountDTO.cs",
               "RelativeDocumentMoniker": "DTOs\\CreateAccountDTO.cs",
@@ -110,25 +140,24 @@
               "RelativeToolTip": "DTOs\\CreateAccountDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-02T23:25:02.315Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-02T23:25:02.315Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 1,
               "Title": "Account.cs",
               "DocumentMoniker": "E:\\NetCore\\Dise\u00F1oSeguro\\Proyecto\\modelo\\SECURE_BANK_BACKEND\\ApiSecureBank\\Entities\\Account.cs",
               "RelativeDocumentMoniker": "Entities\\Account.cs",
               "ToolTip": "E:\\NetCore\\Dise\u00F1oSeguro\\Proyecto\\modelo\\SECURE_BANK_BACKEND\\ApiSecureBank\\Entities\\Account.cs",
               "RelativeToolTip": "Entities\\Account.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAA5wBIAAAA6AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-02T23:24:34.947Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "AccountDTO.cs",
               "DocumentMoniker": "E:\\NetCore\\Dise\u00F1oSeguro\\Proyecto\\modelo\\SECURE_BANK_BACKEND\\ApiSecureBank\\DTOs\\AccountDTO.cs",
               "RelativeDocumentMoniker": "DTOs\\AccountDTO.cs",
@@ -136,8 +165,7 @@
               "RelativeToolTip": "DTOs\\AccountDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-02T23:24:25.29Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-02T23:24:25.29Z"
             },
             {
               "$type": "Document",
@@ -147,14 +175,14 @@
               "RelativeDocumentMoniker": "Endpoints\\AccountsEndpoint.cs",
               "ToolTip": "E:\\NetCore\\Dise\u00F1oSeguro\\Proyecto\\modelo\\SECURE_BANK_BACKEND\\ApiSecureBank\\Endpoints\\AccountsEndpoint.cs",
               "RelativeToolTip": "Endpoints\\AccountsEndpoint.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAQwCUAAABMAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFYAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-02T23:21:50.158Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "Program.cs",
               "DocumentMoniker": "E:\\NetCore\\Dise\u00F1oSeguro\\Proyecto\\modelo\\SECURE_BANK_BACKEND\\ApiSecureBank\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -162,8 +190,7 @@
               "RelativeToolTip": "Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAD8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-02T19:51:06.4Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-02T19:51:06.4Z"
             }
           ]
         }

@@ -24,23 +24,7 @@
     "HttpMethod": "GET",
     "IsController": false,
     "Order": 0,
-    "Parameters": [
-      {
-        "Name": "customerId",
-        "Type": "System.Int32",
-        "IsRequired": true
-      },
-      {
-        "Name": "page",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "recordsPerPage",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
+    "Parameters": [],
     "ReturnTypes": [
       {
         "Type": "System.Collections.Generic.List\u00601[[ApiSecureBank.DTOs.AccountDTO, ApiSecureBank, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
@@ -182,8 +166,8 @@
   },
   {
     "ContainingType": "ApiSecureBank.Endpoints.AccountsEndpoint",
-    "Method": "GetByName",
-    "RelativePath": "Accounts/GetByName/{name}",
+    "Method": "GetByNumber",
+    "RelativePath": "Accounts/GetByNumber/{number}",
     "HttpMethod": "GET",
     "IsController": false,
     "Order": 0,

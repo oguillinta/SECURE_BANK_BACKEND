@@ -10,35 +10,6 @@
         "tags": [
           "AccountsEndpoint"
         ],
-        "parameters": [
-          {
-            "name": "customerId",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          },
-          {
-            "name": "page",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32",
-              "default": 1
-            }
-          },
-          {
-            "name": "recordsPerPage",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32",
-              "default": 10
-            }
-          }
-        ],
         "responses": {
           "200": {
             "description": "OK",
@@ -89,7 +60,7 @@
         }
       }
     },
-    "/Accounts/GetByName/{name}": {
+    "/Accounts/GetByNumber/{number}": {
       "get": {
         "tags": [
           "AccountsEndpoint"
@@ -97,7 +68,7 @@
         "parameters": [
           {
             "name": "number",
-            "in": "query",
+            "in": "path",
             "required": true,
             "schema": {
               "type": "string"
