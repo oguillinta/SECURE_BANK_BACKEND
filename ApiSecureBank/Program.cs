@@ -48,6 +48,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IAccountsRepository, AccountsRepository>();
 builder.Services.AddScoped<ICustomersRepository, CustomersRepository>();
 builder.Services.AddScoped<IInterestRatesRepository, InterestRatesRepository>();
+builder.Services.AddScoped<IAccountSummaryReportRepository, AccountSummaryReportRepository>();
 builder.Services.AddHttpContextAccessor();
 
 // Inyeccion para automapper Entities vs DTOs:
@@ -71,7 +72,7 @@ app.MapGet("/", () => "Hello World!");
 app.UseCors();
 app.MapGroup("/Accounts").MapAccounts();
 app.MapGroup("/Customers").MapCustomers();
-
+app.MapGroup("/InterestRates").MapInterestRates();
 
 // Middleware configuration END
 

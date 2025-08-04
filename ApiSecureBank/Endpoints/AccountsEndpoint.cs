@@ -20,6 +20,8 @@ namespace ApiSecureBank.Endpoints
             group.MapPost("/", Create);
             group.MapPut("/{id:int}", Update);
             group.MapDelete("/{id:int}", Delete);
+            group.MapGet("/reports/summary", GetAccountsSummary)
+                .CacheOutput(c => c.Expire(TimeSpan.FromSeconds(60)).Tag("accounts-get"));
             return group;
         }
 
@@ -113,6 +115,14 @@ namespace ApiSecureBank.Endpoints
             await accountRepository.Delete(id);
             await outputCacheStore.EvictByTagAsync("accounts-get", default);
             return TypedResults.NoContent();
+        }
+
+        static async Task<Ok<IEnumerable<AccountSummaryReportDTO>>> GetAccountsSummary(
+            IAccountSummaryReportRepository accountSummaryReportRepository, IMapper mapper)
+        {
+            var accountSummaryReports = await accountSummaryReportRepository.GetAccountsSummary();
+            var accountSummaryReportsDTO = mapper.Map<IEnumerable<AccountSummaryReportDTO>>(accountSummaryReports);
+            return TypedResults.Ok(accountSummaryReportsDTO);
         }
     }
 }

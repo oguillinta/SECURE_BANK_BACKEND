@@ -12,6 +12,9 @@ namespace ApiSecureBank.Utilities
             CreateMap<CreateAccountDTO, Account>();
             CreateMap<Customer, CustomerDTO>();
             CreateMap<CreateCustomerDTO, Customer>();
+            CreateMap<InterestRate, InterestRateDTO>();
+            CreateMap<AccountSummaryReport, AccountSummaryReportDTO>();
+            CreateMap<CreateAccountSummaryReportDTO, AccountSummaryReport>();
         }
     }
 }
