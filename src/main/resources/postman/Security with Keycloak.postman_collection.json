@@ -1,0 +1,803 @@
+{
+	"info": {
+		"_postman_id": "93b89a82-31ae-4abc-ae43-2dda121b59ea",
+		"name": "Security with Keycloak",
+		"description": "# 🚀 Get started here\n\nThis template guides you through CRUD operations (GET, POST, PUT, DELETE), variables, and tests.\n\n## 🔖 **How to use this template**\n\n#### **Step 1: Send requests**\n\nRESTful APIs allow you to perform CRUD operations using the POST, GET, PUT, and DELETE HTTP methods.\n\nThis collection contains each of these [request](https://learning.postman.com/docs/sending-requests/requests/) types. Open each request and click \"Send\" to see what happens.\n\n#### **Step 2: View responses**\n\nObserve the response tab for status code (200 OK), response time, and size.\n\n#### **Step 3: Send new Body data**\n\nUpdate or add new data in \"Body\" in the POST request. Typically, Body data is also used in PUT request.\n\n```\n{\n    \"name\": \"Add your name in the body\"\n}\n\n ```\n\n#### **Step 4: Update the variable**\n\nVariables enable you to store and reuse values in Postman. We have created a [variable](https://learning.postman.com/docs/sending-requests/variables/) called `base_url` with the sample request [https://postman-api-learner.glitch.me](https://postman-api-learner.glitch.me). Replace it with your API endpoint to customize this collection.\n\n#### **Step 5: Add tests in the \"Scripts\" tab**\n\nAdding tests to your requests can help you confirm that your API is working as expected. You can write test scripts in JavaScript and view the output in the \"Test Results\" tab.\n\n<img src=\"https://content.pstmn.io/fa30ea0a-373d-4545-a668-e7b283cca343/aW1hZ2UucG5n\" alt=\"\" height=\"1530\" width=\"2162\">\n\n## 💪 Pro tips\n\n- Use folders to group related requests and organize the collection.\n    \n- Add more [scripts](https://learning.postman.com/docs/writing-scripts/intro-to-scripts/) to verify if the API works as expected and execute workflows.\n    \n\n## 💡Related templates\n\n[API testing basics](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=e9a37a28-055b-49cd-8c7e-97494a21eb54&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)  \n[API documentation](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=e9c28f47-1253-44af-a2f3-20dce4da1f18&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)  \n[Authorization methods](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=31a9a6ed-4cdf-4ced-984c-d12c9aec1c27&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7450353"
+	},
+	"item": [
+		{
+			"name": "Account",
+			"item": [
+				{
+					"name": "Get By Account Number",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJabmVYV0l1S05sVTFqRFVpQUpSdUoxbUdfQ3ZodGVSdTh6RXQzY1FjXzJjIn0.eyJleHAiOjE3NTM1NjY2ODAsImlhdCI6MTc1MzU2NTQ4MCwiYXV0aF90aW1lIjoxNzUzNTY0Nzc3LCJqdGkiOiJvbnJ0YWM6MDY1MWYxNzItYThjMC1hNzIzLWYxOTQtNmM1MzdkZWNjMTU4IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL3JlYWxtcy9zZWN1cmViYW5rIiwiYXVkIjpbInNlY3VyZS1iYW5raW5nLWFwaSIsImFjY291bnQiXSwic3ViIjoiZGFlNTljOGEtYTMzYS00ZjFlLWExNjUtOTczZTFhZDk5YTc5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoic2VjdXJlLWJhbmtpbmctYW5ndWxhciIsInNpZCI6ImM0YTU4MzA1LTIyYmQtNDdmZC04ZGZhLWEyNDEwMzhlNGM5ZiIsImFjciI6IjAiLCJhbGxvd2VkLW9yaWdpbnMiOlsiKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJhZG1pbiIsImRlZmF1bHQtcm9sZXMtc2VjdXJlYmFuayIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsic2VjdXJlLWJhbmtpbmctYXBpIjp7InJvbGVzIjpbIlBST0ZJTEVfVVBEQVRFUiIsIkFDQ09VTlRfU1VNTUFSWV9WSUVXRVIiLCJBQ0NPVU5UX0ZSRUVaRVIiLCJidXNpbmVzc19zcGVjaWFsaXN0Il19LCJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6Im9wZW5pZCBwcm9maWxlIGVtYWlsIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJuYW1lIjoiT3NjYXIgR3VpbGxpbnRhIiwicHJlZmVycmVkX3VzZXJuYW1lIjoib2d1aWxsaW50YSIsImdpdmVuX25hbWUiOiJPc2NhciIsImZhbWlseV9uYW1lIjoiR3VpbGxpbnRhIiwiZW1haWwiOiJvc2Nhcmd1aWxsaW50YTkzQG91dGxvb2suY29tIn0.EOhmLesosEODPPIpKJ-L6j8_8GWrC6peOBLXk7N8wozp7nw3DuwweoxIBheLjA5DN9pUnz8CL1cuxFB-hZn2lQ6B4HBfQNHWUhkNG2ADOswhGV0YjwQKnXb6vqnPz5DiBekrMwavhlj5WLjeT8cLWd2Aul3bFLxHuGrv2DdozEoFeHlB-emFgQICXRt3at4XD0YzD5VxkeD5ukd-Yg8lHAxGN9yzAmXRAXyPViUyxDjpBCrJEF2LV-EgAXyyw3I7nsyrstbeMk4odjatv1IqxAzk5qn2zCeXsVhv0gZjEWhtlWvEJ9LYfsqHPzxlQkGGHTGKRwXI-AVv2r-9ysZZAA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9091/secure-banking-api/api/v1/accounts/BUS-4567890123",
+							"host": [
+								"localhost"
+							],
+							"port": "9091",
+							"path": [
+								"secure-banking-api",
+								"api",
+								"v1",
+								"accounts",
+								"BUS-4567890123"
+							]
+						},
+						"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+					},
+					"response": []
+				},
+				{
+					"name": "Create Account",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJabmVYV0l1S05sVTFqRFVpQUpSdUoxbUdfQ3ZodGVSdTh6RXQzY1FjXzJjIn0.eyJleHAiOjE3NTM1ODMyNDcsImlhdCI6MTc1MzU4MjA0NywianRpIjoib25ydHJvOjFhMjhhNGJhLWE4OWQtY2M3Zi0wZDVkLTEzNTMzYTRhYWE4YSIsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MC9yZWFsbXMvc2VjdXJlYmFuayIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJkYWU1OWM4YS1hMzNhLTRmMWUtYTE2NS05NzNlMWFkOTlhNzkiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJzZWN1cmUtYmFua2luZy1hcGkiLCJzaWQiOiJjOTRlZDc2ZS02OWFiLTQ2ZWItOTAxMi04ZmNlYWFkYjlkMGYiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbImh0dHA6Ly9sb2NhbGhvc3Q6OTA5MSJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJhZG1pbiIsImRlZmF1bHQtcm9sZXMtc2VjdXJlYmFuayIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsic2VjdXJlLWJhbmtpbmctYXBpIjp7InJvbGVzIjpbIlBST0ZJTEVfVVBEQVRFUiIsIkFDQ09VTlRfU1VNTUFSWV9WSUVXRVIiLCJBQ0NPVU5UX0NSRUFUT1IiLCJBQ0NPVU5UX0ZSRUVaRVIiLCJidXNpbmVzc19zcGVjaWFsaXN0Il19LCJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsIm5hbWUiOiJPc2NhciBHdWlsbGludGEiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJvZ3VpbGxpbnRhIiwiZ2l2ZW5fbmFtZSI6Ik9zY2FyIiwiZmFtaWx5X25hbWUiOiJHdWlsbGludGEiLCJlbWFpbCI6Im9zY2FyZ3VpbGxpbnRhOTNAb3V0bG9vay5jb20ifQ.icE2YoLaZlbWdbpyqTr7J-7d8EAAnbZow4I0cbI-L7DSA8MDjghmxOVEnQVBYmyfBNfKmf511KfRlMUe1H1MZfyimQhkBxx49iH-W5o_Smvuh_qU7mfs1-F59j6x41VlKu6ZZTyJuyzpG641MFoJIkzxY0gOx-lVmogKmsaKcoBb51Ei8YAUoPZDwkQxVUFFrNAVgokRTOuE_NxhYnC92s_2yDY44YB2L3EdDAkPG99qZz7ErCmjm-DVVT8PPnvd6GYW_tVsA1W9Nqgz0NsFam30XcWooxM59tBz4lxAu-o2ggICWwem6M2KHd37ecdnjax_npMyj3c3S-z6SJOP-Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"customerId\": \"CUST002\",\r\n  \"accountType\": \"CHECKING\",\r\n  \"initialBalance\": 500.00\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:9091/secure-banking-api/api/v1/accounts",
+							"host": [
+								"localhost"
+							],
+							"port": "9091",
+							"path": [
+								"secure-banking-api",
+								"api",
+								"v1",
+								"accounts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Freeze Account",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"accountNumber\": \"CUR-901234567-009\",\n    \"action\": \"FREEZE\",\n    \"freezeType\": \"FULL_FREEZE\",\n    \"reason\": \"Suspicious activity detected - multiple failed login attempts\",\n    \"authorizedBy\": \"SECURITY_OFFICER_001\",\n    \"comments\": \"Customer reported unauthorized access attempts from unknown IP addresses\",\n    \"reviewDate\": \"2024-07-22T00:00:00Z\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:9091/CUR-901234567-009/freeze",
+							"host": [
+								"localhost"
+							],
+							"port": "9091",
+							"path": [
+								"CUR-901234567-009",
+								"freeze"
+							]
+						},
+						"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+					},
+					"response": []
+				},
+				{
+					"name": "Get By Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJabmVYV0l1S05sVTFqRFVpQUpSdUoxbUdfQ3ZodGVSdTh6RXQzY1FjXzJjIn0.eyJleHAiOjE3NTM3MjI5NTgsImlhdCI6MTc1MzcyMTc1OCwianRpIjoib25ydHJvOjc3NTM1MDc2LTY0MmItZDM5Yy1mYzViLTE4ZWY1YTE4NTgxYSIsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MC9yZWFsbXMvc2VjdXJlYmFuayIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJkYWU1OWM4YS1hMzNhLTRmMWUtYTE2NS05NzNlMWFkOTlhNzkiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJzZWN1cmUtYmFua2luZy1hcGkiLCJzaWQiOiIwZWU2MzY4NC1iZGM1LTQ5OTctOTQyNi02NDA1OGM5MTYzNDMiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbImh0dHA6Ly9sb2NhbGhvc3Q6OTA5MSJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJhZG1pbiIsImRlZmF1bHQtcm9sZXMtc2VjdXJlYmFuayIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsic2VjdXJlLWJhbmtpbmctYXBpIjp7InJvbGVzIjpbIlBST0ZJTEVfVVBEQVRFUiIsIkFDQ09VTlRfU1VNTUFSWV9WSUVXRVIiLCJBQ0NPVU5UX0NSRUFUT1IiLCJBQ0NPVU5UX0ZSRUVaRVIiLCJidXNpbmVzc19zcGVjaWFsaXN0Il19LCJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsIm5hbWUiOiJPc2NhciBHdWlsbGludGEiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJvZ3VpbGxpbnRhIiwiZ2l2ZW5fbmFtZSI6Ik9zY2FyIiwiZmFtaWx5X25hbWUiOiJHdWlsbGludGEiLCJlbWFpbCI6Im9zY2FyZ3VpbGxpbnRhOTNAb3V0bG9vay5jb20ifQ.Ih9L97zyBcCsY8bqIdPXPCnklzrMwfXlHrcizMU2793cpEII55ZarnYXCav4tFdNYQuJlblKS8MX7kZ5SpFs2Umyqu6GvqP_ZyWdlLoLnmgnCYdrj3zaHqzFxZrrJvfJR2FD8ivlom0UuQVtZDEln8fbkEdHSH9Oc79CJZTuM76QEq-bKIl8-kgWoBAkRbpULejonfj1sdwxP1xPZuBNxgG6XkBUV3AgRiQo4k_kSN32HsiUE4YUdVei-uC8XA383ySLHHKBHM3nFbMHWeTtMf_qg8ZQIaLzjrVoBJHL7k_ccIM2f2jjrgn7OBdnaobxDGMGIZBw_4yzyctoQZveig",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9091/secure-banking-api/api/v1/accounts/beta/BUS-456789012-004",
+							"host": [
+								"localhost"
+							],
+							"port": "9091",
+							"path": [
+								"secure-banking-api",
+								"api",
+								"v1",
+								"accounts",
+								"beta",
+								"BUS-456789012-004"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Account Summary Report",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJabmVYV0l1S05sVTFqRFVpQUpSdUoxbUdfQ3ZodGVSdTh6RXQzY1FjXzJjIn0.eyJleHAiOjE3NTM3NjI0OTksImlhdCI6MTc1Mzc2MTI5OSwianRpIjoib25ydHJvOmExNzRjMzhhLWM0ZTctN2UyZC00YzgzLTdiNGQ0OTRiNWJiNyIsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MC9yZWFsbXMvc2VjdXJlYmFuayIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJkYWU1OWM4YS1hMzNhLTRmMWUtYTE2NS05NzNlMWFkOTlhNzkiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJzZWN1cmUtYmFua2luZy1hcGkiLCJzaWQiOiIxOTcxZGU2MS1jMzI3LTQ4MDEtODFjOC1kZDhiM2I5NWQ5ZjMiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbImh0dHA6Ly9sb2NhbGhvc3Q6OTA5MSJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJhZG1pbiIsImRlZmF1bHQtcm9sZXMtc2VjdXJlYmFuayIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsic2VjdXJlLWJhbmtpbmctYXBpIjp7InJvbGVzIjpbIlBST0ZJTEVfVVBEQVRFUiIsIkFDQ09VTlRfU1VNTUFSWV9WSUVXRVIiLCJBQ0NPVU5UX0NSRUFUT1IiLCJBQ0NPVU5UX0ZSRUVaRVIiLCJidXNpbmVzc19zcGVjaWFsaXN0Il19LCJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsIm5hbWUiOiJPc2NhciBHdWlsbGludGEiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJvZ3VpbGxpbnRhIiwiZ2l2ZW5fbmFtZSI6Ik9zY2FyIiwiZmFtaWx5X25hbWUiOiJHdWlsbGludGEiLCJlbWFpbCI6Im9zY2FyZ3VpbGxpbnRhOTNAb3V0bG9vay5jb20ifQ.E9NuQSpcLi9T_BqJ_5nKJQoYxzGM6trmvRI41WBlRHP-2NwpC-YBK4RGLPAeq1VH7B1gNDS-eJelVIt9WOxR9e95KgQK6WOidVaOomr6d5vXPqhC1NISV8Ar43v1qk0ZIgZ8m-3DueqXqSnIuywdYxirFden_TuIw3bwJdAY3uFUcgGL9vmd2yftqnc2abx7B9RV-aJ9goASC-IQ_-6K_AMmEwBfdLNntY1Sm7V1TVZS7AfFTpmhghJjc6hNcuZDLv1h47WA67-XI5Z-f4EWXHhICy0ZvRiyIX5buuSgJ9N1O93QhDdLINvssaZ7dXJD0rcX_R8e5LKjYBczzpvTmQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9091/secure-banking-api/api/v1/accounts/reports/summary",
+							"host": [
+								"localhost"
+							],
+							"port": "9091",
+							"path": [
+								"secure-banking-api",
+								"api",
+								"v1",
+								"accounts",
+								"reports",
+								"summary"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Customer",
+			"item": [
+				{
+					"name": "Update Customer Profile",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful PUT request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 204]);",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customerId\": \"TEST-001\",\n    \"email\": \"john.updated@email.com\",\n    \"updatedBy\": \"ADMIN-001\",\n    \"updateReason\": \"Customer requested email change\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:9091/customers/TEST-001/profile",
+							"host": [
+								"localhost"
+							],
+							"port": "9091",
+							"path": [
+								"customers",
+								"TEST-001",
+								"profile"
+							]
+						},
+						"description": "This is a PUT request and it is used to overwrite an existing piece of data. For instance, after you create an entity with a POST request, you may want to modify that later. You can do that using a PUT request. You typically identify the entity being updated by including an identifier in the URL (eg. `id=1`).\n\nA successful PUT request typically returns a `200 OK`, `201 Created`, or `204 No Content` response code."
+					},
+					"response": []
+				},
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9091/secure-banking-api/api/v1/accounts/BUS-4567890123",
+							"host": [
+								"localhost"
+							],
+							"port": "9091",
+							"path": [
+								"secure-banking-api",
+								"api",
+								"v1",
+								"accounts",
+								"BUS-4567890123"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get By Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJabmVYV0l1S05sVTFqRFVpQUpSdUoxbUdfQ3ZodGVSdTh6RXQzY1FjXzJjIn0.eyJleHAiOjE3NTM2NTk3MjYsImlhdCI6MTc1MzY1ODUyNiwianRpIjoib25ydHJvOmY2NTQ0MTM5LWMzZjctZWIzZi1iNGYzLTIzZjVjN2QzMzZkYSIsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MC9yZWFsbXMvc2VjdXJlYmFuayIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJkYWU1OWM4YS1hMzNhLTRmMWUtYTE2NS05NzNlMWFkOTlhNzkiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJzZWN1cmUtYmFua2luZy1hcGkiLCJzaWQiOiIzNTNiMDAyZi02MTIzLTQ3OWMtYTM5Zi05YjRiNGJlNTdiZmYiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbImh0dHA6Ly9sb2NhbGhvc3Q6OTA5MSJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJhZG1pbiIsImRlZmF1bHQtcm9sZXMtc2VjdXJlYmFuayIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsic2VjdXJlLWJhbmtpbmctYXBpIjp7InJvbGVzIjpbIlBST0ZJTEVfVVBEQVRFUiIsIkFDQ09VTlRfU1VNTUFSWV9WSUVXRVIiLCJBQ0NPVU5UX0NSRUFUT1IiLCJBQ0NPVU5UX0ZSRUVaRVIiLCJidXNpbmVzc19zcGVjaWFsaXN0Il19LCJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsIm5hbWUiOiJPc2NhciBHdWlsbGludGEiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJvZ3VpbGxpbnRhIiwiZ2l2ZW5fbmFtZSI6Ik9zY2FyIiwiZmFtaWx5X25hbWUiOiJHdWlsbGludGEiLCJlbWFpbCI6Im9zY2FyZ3VpbGxpbnRhOTNAb3V0bG9vay5jb20ifQ.fZMirjuClsP8VIFqqNJeURztBM_-jmNpz7GlowWMnTgvUbSg_1Au2TKsucZbQLEe9_4ZWgGjniZU4ZRs3qOMbYlmxcn65J_vmb3-37KBJPFaOzTon_lGqGYRBwUoadXSXsqGZAzlA36vB52jpr_yRp8uhbpnDHi7E69NxHmi3nD8noFqLG8mqRHFO96KxzaUAskEckq1Z_K4_F1Hovd0GlL0YyvAGi492aEdKaRLTjvOwEh6fD6Sn7Kq5LR7L-jbAjd02pkVzImlX5ruhLZ307uUrGDSeDSsrE-HFlSO7GIy62nv_iXAj7pmMnSAMHYfbu9klrE2DmsVh1xpgbMYLw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9091/secure-banking-api/api/v1/customers/TEST-004",
+							"host": [
+								"localhost"
+							],
+							"port": "9091",
+							"path": [
+								"secure-banking-api",
+								"api",
+								"v1",
+								"customers",
+								"TEST-004"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get By Email",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJabmVYV0l1S05sVTFqRFVpQUpSdUoxbUdfQ3ZodGVSdTh6RXQzY1FjXzJjIn0.eyJleHAiOjE3NTM3MjI5NTgsImlhdCI6MTc1MzcyMTc1OCwianRpIjoib25ydHJvOjc3NTM1MDc2LTY0MmItZDM5Yy1mYzViLTE4ZWY1YTE4NTgxYSIsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MC9yZWFsbXMvc2VjdXJlYmFuayIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJkYWU1OWM4YS1hMzNhLTRmMWUtYTE2NS05NzNlMWFkOTlhNzkiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJzZWN1cmUtYmFua2luZy1hcGkiLCJzaWQiOiIwZWU2MzY4NC1iZGM1LTQ5OTctOTQyNi02NDA1OGM5MTYzNDMiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbImh0dHA6Ly9sb2NhbGhvc3Q6OTA5MSJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJhZG1pbiIsImRlZmF1bHQtcm9sZXMtc2VjdXJlYmFuayIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsic2VjdXJlLWJhbmtpbmctYXBpIjp7InJvbGVzIjpbIlBST0ZJTEVfVVBEQVRFUiIsIkFDQ09VTlRfU1VNTUFSWV9WSUVXRVIiLCJBQ0NPVU5UX0NSRUFUT1IiLCJBQ0NPVU5UX0ZSRUVaRVIiLCJidXNpbmVzc19zcGVjaWFsaXN0Il19LCJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsIm5hbWUiOiJPc2NhciBHdWlsbGludGEiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJvZ3VpbGxpbnRhIiwiZ2l2ZW5fbmFtZSI6Ik9zY2FyIiwiZmFtaWx5X25hbWUiOiJHdWlsbGludGEiLCJlbWFpbCI6Im9zY2FyZ3VpbGxpbnRhOTNAb3V0bG9vay5jb20ifQ.Ih9L97zyBcCsY8bqIdPXPCnklzrMwfXlHrcizMU2793cpEII55ZarnYXCav4tFdNYQuJlblKS8MX7kZ5SpFs2Umyqu6GvqP_ZyWdlLoLnmgnCYdrj3zaHqzFxZrrJvfJR2FD8ivlom0UuQVtZDEln8fbkEdHSH9Oc79CJZTuM76QEq-bKIl8-kgWoBAkRbpULejonfj1sdwxP1xPZuBNxgG6XkBUV3AgRiQo4k_kSN32HsiUE4YUdVei-uC8XA383ySLHHKBHM3nFbMHWeTtMf_qg8ZQIaLzjrVoBJHL7k_ccIM2f2jjrgn7OBdnaobxDGMGIZBw_4yzyctoQZveig",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9091/secure-banking-api/api/v1/customers/john.smith@email.com/email",
+							"host": [
+								"localhost"
+							],
+							"port": "9091",
+							"path": [
+								"secure-banking-api",
+								"api",
+								"v1",
+								"customers",
+								"john.smith@email.com",
+								"email"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Security",
+			"item": [
+				{
+					"name": "Get Token Authorization Oauth 2.0",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "client_authentication",
+									"value": "body",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "1234567",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "http://localhost:8080/realms/securebank/protocol/openid-connect/token",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "oguillinta",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "password_credentials",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "posts",
+									"type": "string"
+								},
+								{
+									"key": "tokenName",
+									"value": "api-post",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/posts",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Token Authorization Oauth 2.0 - User Credentials",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "username",
+									"value": "pmalacas",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "secure-banking-api",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "",
+									"type": "string"
+								},
+								{
+									"key": "tokenName",
+									"value": "secure-banking-api",
+									"type": "string"
+								},
+								{
+									"key": "client_authentication",
+									"value": "body",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "1234567",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "http://localhost:8080/realms/securebank/protocol/openid-connect/token",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "password_credentials",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9091/secure-banking-api/api/v1/accounts/BUS-4567890123",
+							"host": [
+								"localhost"
+							],
+							"port": "9091",
+							"path": [
+								"secure-banking-api",
+								"api",
+								"v1",
+								"accounts",
+								"BUS-4567890123"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Token Authorization Oauth 2.0 - User Credentials + Client Secret",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "username",
+									"value": "oguillinta",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "secure-banking-api",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "",
+									"type": "string"
+								},
+								{
+									"key": "tokenName",
+									"value": "secure-banking-api",
+									"type": "string"
+								},
+								{
+									"key": "client_authentication",
+									"value": "body",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "1234567",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "http://localhost:8080/realms/securebank/protocol/openid-connect/token",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "password_credentials",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9091/secure-banking-api/api/v1/accounts/BUS-4567890123",
+							"host": [
+								"localhost"
+							],
+							"port": "9091",
+							"path": [
+								"secure-banking-api",
+								"api",
+								"v1",
+								"accounts",
+								"BUS-4567890123"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Token Body Form",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "client_id",
+									"value": "secure-banking-api",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "oguillinta",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Ad@masali250?",
+									"type": "text"
+								},
+								{
+									"key": "grant_type",
+									"value": "password",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "jjhn3l8WbNlR7nefN1mamsLTzI4RZpAx",
+									"type": "text"
+								},
+								{
+									"key": "scope",
+									"value": "basic",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/realms/securebank/protocol/openid-connect/token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"realms",
+								"securebank",
+								"protocol",
+								"openid-connect",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh Token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "client_id",
+									"value": "posts",
+									"type": "text"
+								},
+								{
+									"key": "scope",
+									"value": "basic",
+									"type": "text"
+								},
+								{
+									"key": "grant_type",
+									"value": "refresh_token",
+									"type": "text"
+								},
+								{
+									"key": "refresh_token",
+									"value": "eyJhbGciOiJIUzUxMiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI4NWUwNWE4NC1iMmUwLTRlODAtOGM1ZC0xMGNjOGY2ZDYzN2UifQ.eyJleHAiOjE3NTI1NDI1MDcsImlhdCI6MTc1MjU0MDcwNywianRpIjoiMGY5ZWNkYTYtNDNiZC1mMWVlLWI1MmItMzBlZjkxZWU0MDM5IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL3JlYWxtcy9zZWN1cmViYW5rIiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL3JlYWxtcy9zZWN1cmViYW5rIiwic3ViIjoiZGFlNTljOGEtYTMzYS00ZjFlLWExNjUtOTczZTFhZDk5YTc5IiwidHlwIjoiUmVmcmVzaCIsImF6cCI6InBvc3RzIiwic2lkIjoiZGE5ODdjNzQtMTU0ZS00YjdkLTkyOTktNDRmNmM1MDAyNDJmIiwic2NvcGUiOiJhY3IgcHJvZmlsZSBiYXNpYyBlbWFpbCByb2xlcyB3ZWItb3JpZ2lucyJ9.nf9IpWinQWmj0S2xwlGHfVmAaQgHFI8ohNBBK1qJ7oXyQEOS3_vbMzYhmOdYRFwwM0dDPJBvr8wlgMf2c0EQDg",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/realms/securebank/protocol/openid-connect/token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"realms",
+								"securebank",
+								"protocol",
+								"openid-connect",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Introspect",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "client_id",
+									"value": "secure-banking-api",
+									"type": "text"
+								},
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJabmVYV0l1S05sVTFqRFVpQUpSdUoxbUdfQ3ZodGVSdTh6RXQzY1FjXzJjIn0.eyJleHAiOjE3NTMzMjE2MjAsImlhdCI6MTc1MzMyMDQyMCwianRpIjoib25ydHJvOjhjZGNiNTViLTgxMDktMTQ4Ny1hMzFlLWUyYTdlNWY1NzhjYiIsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MC9yZWFsbXMvc2VjdXJlYmFuayIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJkYWU1OWM4YS1hMzNhLTRmMWUtYTE2NS05NzNlMWFkOTlhNzkiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJzZWN1cmUtYmFua2luZy1hcGkiLCJzaWQiOiI1YmRmOTI5Ni1lMzNjLTRkOTEtOGMxNS0xZDU5Mjk2YjI4MDQiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbImh0dHA6Ly9sb2NhbGhvc3Q6OTA5MSJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJhZG1pbiIsImRlZmF1bHQtcm9sZXMtc2VjdXJlYmFuayIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsic2VjdXJlLWJhbmtpbmctYXBpIjp7InJvbGVzIjpbIlBST0ZJTEVfVVBEQVRFUiIsIkFDQ09VTlRfU1VNTUFSWV9WSUVXRVIiLCJidXNpbmVzc19zcGVjaWFsaXN0Il19LCJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsIm5hbWUiOiJPc2NhciBHdWlsbGludGEiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJvZ3VpbGxpbnRhIiwiZ2l2ZW5fbmFtZSI6Ik9zY2FyIiwiZmFtaWx5X25hbWUiOiJHdWlsbGludGEiLCJlbWFpbCI6Im9zY2FyZ3VpbGxpbnRhOTNAb3V0bG9vay5jb20ifQ.KLmveN5fS58Az2GYUKuFu1W0Kc_n1bQ0h-02Dep14WOZ_2VCyb147XLPYLGtc4E-_E1vBgNOJ7Mt3_5bSM2yrFESx5k9lo-_Wp9H4WOtLVE0mNUpE3KZLQqglirSXcHRMHAbqbH0dGR5UlL5oOrnJkj2gUNj4w8A9AmFfeEPkwvu7ByYJx5Om8zxTOJH43URFpthBuJHkW3_rTrv4K6Ngq4MjNQkxvJSDm17NbF9xPzyQO-AaEVCfAR6OwzFtWzwDwcjRfMb_rZe5eUT5hLhY5rLy1kZda-Mr2OnG1W8Rm-1M5lucOOgd1y-kuV6AJO5ji5yZC5U8pvyQt7TbPcvTQ",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "jjhn3l8WbNlR7nefN1mamsLTzI4RZpAx",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/realms/securebank/protocol/openid-connect/token/introspect",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"realms",
+								"securebank",
+								"protocol",
+								"openid-connect",
+								"token",
+								"introspect"
+							],
+							"query": [
+								{
+									"key": "client_id",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Interest Rate",
+			"item": [
+				{
+					"name": "Get Interest Rates",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Get Interest Rates GraphQL",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJabmVYV0l1S05sVTFqRFVpQUpSdUoxbUdfQ3ZodGVSdTh6RXQzY1FjXzJjIn0.eyJleHAiOjE3NTM4MzA4ODAsImlhdCI6MTc1MzgyOTY4MCwianRpIjoib25ydHJvOjg2ZTdkNTFhLTA5NWEtMTIwYS1iNTY3LTA0NmMwMTFlY2NmOSIsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MC9yZWFsbXMvc2VjdXJlYmFuayIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJkYWU1OWM4YS1hMzNhLTRmMWUtYTE2NS05NzNlMWFkOTlhNzkiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJzZWN1cmUtYmFua2luZy1hcGkiLCJzaWQiOiI3MWU5ODUzNy00YWIyLTQ4M2YtYTgxYi1jMDJjMzBjMTU3OTgiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbImh0dHA6Ly9sb2NhbGhvc3Q6OTA5MSJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJhZG1pbiIsImRlZmF1bHQtcm9sZXMtc2VjdXJlYmFuayIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsic2VjdXJlLWJhbmtpbmctYXBpIjp7InJvbGVzIjpbIlBST0ZJTEVfVVBEQVRFUiIsIkFDQ09VTlRfU1VNTUFSWV9WSUVXRVIiXX0sImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwibmFtZSI6Ik9zY2FyIEd1aWxsaW50YSIsInByZWZlcnJlZF91c2VybmFtZSI6Im9ndWlsbGludGEiLCJnaXZlbl9uYW1lIjoiT3NjYXIiLCJmYW1pbHlfbmFtZSI6Ikd1aWxsaW50YSIsImVtYWlsIjoib3NjYXJndWlsbGludGE5M0BvdXRsb29rLmNvbSJ9.Rcu7k1atFnjlIIyEUHcpRGE37nJ84ynLxTwg_GkGhgKpUhDF74lIIeNoJXEtsj3tnb4i67STrkF0TJ1VXfleH2b2LUG3c6WyXnRtx-TE8seauJ1hxv2JKqT_smHSlo2lHOxjJJpqL2_PXYCAVJyfEl6OXTHXrlHJzcWAyyNcWe8Lz-zeZcDKZclJqV4ZqYw-5landkahhodnnxkrULM7mzw8uG3csKr2tXuvXHKz4C06mzASoQSiDF1pC1Gm-p_xuwJkt48FNlXdPopadlv9LmVpOSN9JmNxodHzOlnRT-C_-2XQsvzooxgPWXDOAJjvWhcruN-aKJpxitWginDHCQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"query\": \"{ interestRate_findAll { id productType rate } }\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9091/secure-banking-api/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9091",
+							"path": [
+								"secure-banking-api",
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "id",
+			"value": "1"
+		},
+		{
+			"key": "base_url",
+			"value": "https://postman-rest-api-learner.glitch.me/"
+		}
+	]
+}

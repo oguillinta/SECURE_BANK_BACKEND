@@ -13,6 +13,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -49,7 +51,7 @@ public class CustomerRestController {
         return ResponseEntity.ok(response);
     }
 
-    @PreAuthorize("hasAuthority('PROFILE_UPDATER')")
+    @PreAuthorize("hasAuthority('CUSTOMER_VIEWER')")
     @GetMapping("/api/v1/customers")
     public ResponseEntity<List<GetAllCustomersResponse>> getAllCustomers() {
         List<GetAllCustomersResponse> response = getAllCustomersUseCase.getAllCustomers();
@@ -57,15 +59,14 @@ public class CustomerRestController {
 
     }
 
-    @PreAuthorize("hasAuthority('PROFILE_UPDATER')")
+    @PreAuthorize("hasAuthority('CUSTOMER_VIEWER')")
     @GetMapping("/api/v1/customers/{email}/email")
     public ResponseEntity<GetCustomerByEmailResponse> getCustomerByEmail(@PathVariable String email) {
         GetCustomerByEmailResponse response = getCustomerByEmailUseCase.getCustomerByEmail(email);
         return ResponseEntity.ok(response);
-
     }
 
-    @PreAuthorize("hasAuthority('PROFILE_UPDATER')")
+    @PreAuthorize("hasAuthority('CUSTOMER_VIEWER')")
     @GetMapping("/api/v1/customers/{customerId}")
     public ResponseEntity<GetCustomerByIdResponse> getCustomerById(@PathVariable String customerId) {
         GetCustomerByIdResponse response = getCustomerByIdUseCase.getCustomerById(customerId);

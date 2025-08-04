@@ -40,21 +40,16 @@ public class SecurityFilter {
 
             // Customer endpoints - different roles for different operations
             auth.requestMatchers(HttpMethod.GET, "/api/v1/customers/**")
-                    .hasAnyAuthority("PROFILE_UPDATER", "ACCOUNT_SUMMARY_VIEWER", "admin");
+                    .hasAnyAuthority("CUSTOMER_VIEWER", "admin");
             auth.requestMatchers(HttpMethod.PUT, "/api/v1/customers/**")
                     .hasAnyAuthority("PROFILE_UPDATER", "admin");
-            auth.requestMatchers(HttpMethod.POST, "/api/v1/customers/**")
-                    .hasAnyAuthority("admin");
-
             // Account endpoints - role-based access
             auth.requestMatchers(HttpMethod.GET, "/api/v1/accounts/**")
-                    .hasAnyAuthority("ACCOUNT_SUMMARY_VIEWER", "PROFILE_UPDATER", "admin");
+                    .hasAnyAuthority("ACCOUNT_SUMMARY_VIEWER", "admin");
             auth.requestMatchers(HttpMethod.POST, "/api/v1/accounts/**")
                     .hasAnyAuthority("ACCOUNT_CREATOR", "admin");
             auth.requestMatchers(HttpMethod.PUT, "/api/v1/accounts/*/freeze")
                     .hasAnyAuthority("ACCOUNT_FREEZER", "admin");
-            auth.requestMatchers(HttpMethod.PUT, "/api/v1/accounts/**")
-                    .hasAnyAuthority("PROFILE_UPDATER", "admin");
 
             // Any other request must be fully authenticated
             auth.anyRequest().fullyAuthenticated();
